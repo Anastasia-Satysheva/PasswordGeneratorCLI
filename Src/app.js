@@ -1,4 +1,5 @@
 const inquirer = require('inquirer');
+const chalk = require('chalk')
 let passGen = require('./pwd-gen');
 
 
@@ -9,9 +10,10 @@ class App {
 
   getUserInput() {
     let stdin = process.stdin, stdout = process.stdout;
+    const question = "Please input the length of passwaord required. Please make sure to input length between 8 and 128!!!: ";
     
     stdin.resume();
-    stdout.write("Please input the length of password required. Please make sure to input length between 8 and 128!!!: ");
+    console.log(chalk.green.bold.underline(question));
   
     return new Promise(res => {
       stdin.once('data', data => {
@@ -22,13 +24,15 @@ class App {
 
   async getLength() {
     let answer;
+    const success_msg = `Perfect! Your password will have ${answer} symbols! Now, please, select following options and click Ready to generate!`
+    const err_msg = "Be careful! Enter a number from 8-128!"
 
     do {
       answer = await this.getUserInput();
-      if(answer < 8 || answer > 128) console.log("Be careful! Enter a number from 8-128!")
+      if(answer < 8 || answer > 128) console.log(chalk.redBright.bold(err_msg))
     } while(answer < 8 || answer > 128);
   
-    console.log(`Perfect! Your password will have ${answer} symbols! Now, please, select following options and click Ready to generate!`)
+    console.log(chalk.blue.bold(success_msg))
     this.len = answer;
   }
 
@@ -49,7 +53,10 @@ class App {
     ])
     .then(answers => {
       let pwrd = new passGen(this.len).generate(answers.password);
-      if(pwrd != null) console.log(`Your password is: ${pwrd}`);
+      if(pwrd != null) {
+        process.stdout.write(chalk.magenta.underline("Your password is: "));
+        process.stdout.write(chalk.white.bgGreen.bold(pwrd))
+      }
     })
     .catch(error => {
       if(error.isTtyError) {
