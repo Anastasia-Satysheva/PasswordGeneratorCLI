@@ -24,15 +24,22 @@ class App {
 
   async getLength() {
     let answer;
-    const success_msg = `Perfect! Your password will have ${answer} symbols! Now, please, select following options and click Ready to generate!`
     const err_msg = "Be careful! Enter a number from 8-128!"
 
     do {
       answer = await this.getUserInput();
-      if(answer < 8 || answer > 128) console.log(chalk.redBright.bold(err_msg))
+      if(answer < 8 || answer > 128) {
+        console.log(chalk.redBright.bold(err_msg))
+        if (8 > answer)
+            console.log(chalk.white.bgMagenta("Password is too short :( "));
+        else if (answer > 128) 
+            console.log(chalk.white.bgCyan("Password is too lasrge :( "))
+        
+        console.log(chalk.yellow.bold("Retry again!!!"))
+      }
     } while(answer < 8 || answer > 128);
   
-    console.log(chalk.blue.bold(success_msg))
+    console.log(chalk.blue.bold(`Perfect! Your password will have ${answer} symbols! Now, please, select following options and click Ready to generate!`))
     this.len = answer;
   }
 
@@ -60,7 +67,9 @@ class App {
     })
     .catch(error => {
       if(error.isTtyError) {
+        // Prompt couldn't be rendered in the current environment
       } else {
+        // Something else when wrong
       }
     });
   }
