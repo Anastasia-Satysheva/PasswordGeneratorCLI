@@ -17,7 +17,7 @@ Built using Node.js framework
 The user will be asked to choose a length of password (must be between 8 and 128 characters). After that user has to choose at least 1 character type (Special characters, numbers, lowercase characters, uppercase characters). After that user will be presented with a password matching the chosen details.
 
 ### Screenshots
-<img src="./Screen Shot 2020-03-09 at 12.04.51 AM.png">
+<img src="./Screen Shot 2020-03-09 at 2.00.03 AM.png">
 
 ### Video Example
 Check it out here:
