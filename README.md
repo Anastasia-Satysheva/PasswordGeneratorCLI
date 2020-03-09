@@ -1,6 +1,6 @@
 ## Password Generator CLI
 A password generator is a tool that automatically generates a password based on guidelines that user sets to create strong and unpredictable passwords.
-The application is a Command Line Interface that uses Node, Inquirer, and ES6 classes.
+The application is a Command Line Interface that uses Node, Inquirer, ES6 classes and some Chalk styling.
 
 ### Features
 A lot of users have an access to sensitive data. This app will help to randomly generate a password that meets certain criteria and provides security.
