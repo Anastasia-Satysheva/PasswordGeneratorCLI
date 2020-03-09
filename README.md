@@ -21,4 +21,4 @@ The user will be asked to choose a length of password (must be between 8 and 128
 
 ### Video Example
 Check it out here:
-https://drive.google.com/file/d/1P2wYmKzB5FgHTYliQn_VudgVE3UEALFJ/view?usp=sharing
+https://drive.google.com/file/d/1BVGfGZjirmWnnFu7epvLn32fxdOftyxr/view?usp=sharing
