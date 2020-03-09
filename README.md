@@ -18,3 +18,7 @@ The user will be asked to choose a length of password (must be between 8 and 128
 
 ### Screenshots
 <img src="./Screen Shot 2020-03-09 at 12.04.51 AM.png">
+
+### Video Example
+Check it out here:
+https://drive.google.com/file/d/1P2wYmKzB5FgHTYliQn_VudgVE3UEALFJ/view?usp=sharing
